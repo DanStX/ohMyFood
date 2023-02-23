@@ -1,0 +1,39 @@
+// .big-title {
+//     background-color: #111;
+// }
+
+@import 
+    './scss/abstracts/functions',
+    './scss/abstracts/mixins',
+    './scss/abstracts/variables';
+@import 
+    './scss/vendors/bootstrap5/bootstrap.scss',
+    './scss/vendors/flexslider',
+    './scss/vendors/normalize';
+@import 
+    './scss/base/reset',
+    './scss/base/typography',
+    './scss/base/base';
+@import 
+    './scss/layout/header',
+    './scss/layout/navbar',
+    './scss/layout/main',
+    './scss/layout/pagination',
+    './scss/layout/footer';
+    // './scss/layout/navbar';
+@import 
+    './scss/components/buttons',
+    './scss/components/buttons',
+    './scss/components/buttons';
+@import 
+    // './scss/pages/home',
+    // './scss/pages/home',
+    './scss/pages/home';
+@import 
+    // './scss/Themes/darktheme',
+    // './scss/Themes/darktheme',
+    './scss/Themes/darktheme';
+
+@import 
+
+    './scss/shame';
