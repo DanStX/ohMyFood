@@ -1,27 +1,32 @@
-// Font size
-$font-size-small: 12px;
-$font-size-medium: 14px;
-$font-size-large: 16px;
-
-// Breakpoints for responsive
-$breakpoint-small: 500px;
-$breakpoint-medium: 800px;
-$breakpoint-large: 1000px;
-
-
-// Font family
-// $font-family-title: ;
-// $font-family-label: ;
-// $font-family-namesite: ;
-// $font-family-quotes: ;
-
-
 // Colors
-// $color-text: #;
-// $color-text-alt : #;
+$color-text: #000;
+$color-first: #FF79DA;
+$color-second: #99E2D0;
+$color-tertiaire: #9356DC;
 // $color-button: #;
 // $color-bg-first: #;
-// $color-bg-second: #;
-// $color-footer: #;
-// $color-white: #;
-// $color-light-text: #;
+
+// Font family
+$ff-title: 'Shrikhand', cursive, serif, sans-serif;
+$ff-text: 'Roboto', serif, sans-serif;
+
+// Font Weight 
+$fw-small: 100;
+$fw-medium: 400;
+$fw-bold: 700;
+$fw-bolder: 900;
+
+// Font size
+$fs-small: 1rem;
+$fs-default: 1.6rem;
+$fs-medium: 1.4rem;
+$fs-large: 1.6rem;
+
+// Breakpoints for responsive
+$breakpoint-small: 600px;
+$breakpoint-medium: 900px;
+$breakpoint-large: 1200px;
+$breakpoint-large: 1400px;
+
+
+
