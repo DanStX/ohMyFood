@@ -1,3 +1,73 @@
 .autre {
-    
+    display: flex;
+    flex-direction: column;
+
+
+    & .brand {
+        display: flex;
+        align-items: center;
+
+        &__icon {
+            font-size: 2rem;
+            color: $color-text;
+            margin: 2rem -2rem 2rem 2rem;
+        }
+
+        &__title {
+            margin: 0 auto;
+        }
+
+        & .header {
+            height: 90vh;
+            padding: 10rem;
+
+            & .header__title {
+                margin: 0;
+            }
+        }
+    }
+
+    .main {
+        .main__title {
+            display: flex;
+            justify-content: flex-start;
+            .hackcheck {
+                &-icon {
+                    margin-left: 5rem;
+                }
+
+                input[type="checkbox"] {
+                    display: none;
+                }
+
+                input[type="checkbox"]:checked+.hackcheck-icon {
+                    color: black;
+                    -webkit-text-fill-color: transparent;
+                    -webkit-background-clip: text;
+                    background: linear-gradient(193.33deg, #9356DC -11.44%, #FF79DA 123.93%);
+                }
+            }
+        }
+    }
+
+    & .un {
+        background-image: url("/Assets/img/restaurants/jay-wennington-N_Y88TWmGwA-unsplash.jpg");
+        background-size: cover;
+    }
+
+    & .deux {
+        background-image: url("/Assets/img/restaurants/louis-hansel-shotsoflouis-qNBGVyOCY8Q-unsplash.jpg");
+        background-size: cover;
+    }
+
+    & .trois {
+        background-image: url("/Assets/img/restaurants/stil-u2Lp8tXIcjw-unsplash.jpg");
+        background-size: cover;
+    }
+
+    & .quatre {
+        background-image: url("/Assets/img/restaurants/toa-heftiba-DQKerTsQwi0-unsplash.jpg");
+        background-size: cover;
+    }
+
 }

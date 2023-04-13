@@ -1,1 +1,45 @@
-//This file is for create your style with relation on space of header
+.header {
+    text-align: center;
+    padding-bottom: 7rem;
+    
+    
+
+    &__title {
+        font-size: 2.5rem;
+        line-height: 1.2;
+        margin: 5rem auto 1rem auto;
+        
+        &-span {  
+            display: block;
+        }
+    }
+    
+    &__para {
+        font-size: 1.8rem;
+        margin-bottom: 4rem;
+        line-height: 1.2;
+        
+        &-span {  
+            display: block;
+        }
+    }
+
+
+}
+
+.autre .header {
+    height: 40vh;
+}
+
+.un {
+    background-image: url("/Assets/img/restaurants/jay-wennington-N_Y88TWmGwA-unsplash.jpg");
+}
+.deux {
+    background-image: url("/Assets/img/restaurants/louis-hansel-shotsoflouis-qNBGVyOCY8Q-unsplash.jpg");
+}
+.trois {
+    background-image: url("/Assets/img/restaurants/stil-u2Lp8tXIcjw-unsplash.jpg");
+}
+.quatre {
+    background-image: url("/Assets/img/restaurants/toa-heftiba-DQKerTsQwi0-unsplash.jpg");
+}

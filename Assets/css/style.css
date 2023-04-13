@@ -1,304 +1,21 @@
+@charset "UTF-8";
 /*
- * jQuery FlexSlider v2.6.4
- * http://www.woothemes.com/flexslider/
- *
- * Copyright 2012 WooThemes
- * Free to use under the GPLv2 and later license.
- * http://www.gnu.org/licenses/gpl-2.0.html
- *
- * Contributing author: Tyler Smith (@mbmufffin)
- *
- */
-/* ====================================================================================================================
- * FONT-FACE
- * ====================================================================================================================*/
-@import url("https://fonts.googleapis.com/css?family=Aleo:400,700|Lato:400,700,900|Leckerli+One&display=swap");
-@import url("https://fonts.googleapis.com/css?family=Capriola&display=swap");
-@import url("https://fonts.googleapis.com/css?family=Droid+Serif:400,700");
-@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,300;1,500;1,600;1,700;1,800;1,900&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Shrikhand&display=swap");
-@font-face {
-  font-family: "flexslider-icon";
-  src: url("../fonts/flexslider-icon.eot");
-  src: url("../fonts/flexslider-icon.eot?#iefix") format("embedded-opentype"), url("../fonts/flexslider-icon.woff") format("woff"), url("../fonts/flexslider-icon.ttf") format("truetype"), url("../fonts/flexslider-icon.svg#flexslider-icon") format("svg");
-  font-weight: normal;
-  font-style: normal;
-}
-/* ====================================================================================================================
- * RESETS
- * ====================================================================================================================*/
-.flex-container a:hover,
-.flex-slider a:hover {
-  outline: none;
-}
+0 - 600px:      Phone
+600 - 900px:    Tablette 
+900 - 1200px:   Tablette desktop
+[1200 - 1800] est le style normal  application
+1400px + :       desktop
 
-.slides,
-.slides > li,
-.flex-control-nav,
-.flex-direction-nav {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
+$breakpoint  à choisir:
+- phone
+- tab-port
+- desktop
+- big-
 
-.flex-pauseplay span {
-  text-transform: capitalize;
-}
+ORDRE: Base + typography > general layout + grid > page layout > components
 
-/* ====================================================================================================================
- * BASE STYLES
- * ====================================================================================================================*/
-.flexslider {
-  margin: 0;
-  padding: 0;
-}
-
-.flexslider .slides > li {
-  display: none;
-  -webkit-backface-visibility: hidden;
-}
-
-.flexslider .slides img {
-  width: 100%;
-  display: block;
-}
-
-.flexslider .slides:after {
-  content: " ";
-  display: block;
-  clear: both;
-  visibility: hidden;
-  line-height: 0;
-  height: 0;
-}
-
-html[xmlns] .flexslider .slides {
-  display: block;
-}
-
-* html .flexslider .slides {
-  height: 1%;
-}
-
-.no-js .flexslider .slides > li:first-child {
-  display: block;
-}
-
-/* ====================================================================================================================
- * DEFAULT THEME
- * ====================================================================================================================*/
-.flexslider {
-  margin: 0 0 60px;
-  background: #fff;
-  border: 4px solid #fff;
-  position: relative;
-  zoom: 1;
-  border-radius: 4px;
-  -o-box-shadow: "" 0 1px 4px rgba(0, 0, 0, 0.2);
-  box-shadow: "" 0 1px 4px rgba(0, 0, 0, 0.2);
-}
-
-.flexslider .slides {
-  zoom: 1;
-}
-
-.flexslider .slides img {
-  height: auto;
-  -moz-user-select: none;
-}
-
-.flex-viewport {
-  max-height: 2000px;
-  transition: all 1s ease;
-}
-
-.loading .flex-viewport {
-  max-height: 300px;
-}
-
-.carousel li {
-  margin-right: 5px;
-}
-
-.flex-direction-nav {
-  *height: 0;
-}
-
-.flex-direction-nav a {
-  text-decoration: none;
-  display: block;
-  width: 40px;
-  height: 50px;
-  margin: -20px 0 0;
-  position: absolute;
-  top: 50%;
-  z-index: 10;
-  overflow: hidden;
-  opacity: 0;
-  cursor: pointer;
-  color: rgba(0, 0, 0, 0.8);
-  text-shadow: 1px 1px 0 rgba(255, 255, 255, 0.3);
-  transition: all 0.3s ease-in-out;
-}
-
-.flex-direction-nav a:before {
-  font-family: "flexslider-icon";
-  font-size: 40px;
-  display: inline-block;
-  content: "\f001";
-  color: #fff;
-  text-shadow: 1px 1px 0 rgba(255, 255, 255, 0.3);
-}
-
-.flex-direction-nav a.flex-next:before {
-  content: "\f002";
-}
-
-.flex-direction-nav .flex-prev {
-  left: -50px;
-}
-
-.flex-direction-nav .flex-next {
-  right: -50px;
-  text-align: right;
-}
-
-.flexslider:hover .flex-direction-nav .flex-prev {
-  opacity: 0.7;
-  left: 10px;
-}
-
-.flexslider:hover .flex-direction-nav .flex-prev:hover {
-  opacity: 1;
-}
-
-.flexslider:hover .flex-direction-nav .flex-next {
-  opacity: 0.7;
-  right: 10px;
-}
-
-.flexslider:hover .flex-direction-nav .flex-next:hover {
-  opacity: 1;
-}
-
-.flex-direction-nav .flex-disabled {
-  opacity: 0 !important;
-  filter: alpha(opacity=0);
-  cursor: default;
-  z-index: -1;
-}
-
-.flex-pauseplay a {
-  display: block;
-  width: 20px;
-  height: 20px;
-  position: absolute;
-  bottom: 5px;
-  left: 10px;
-  opacity: 0.8;
-  z-index: 10;
-  overflow: hidden;
-  cursor: pointer;
-  color: #000;
-}
-
-.flex-pauseplay a:before {
-  font-family: "flexslider-icon";
-  font-size: 20px;
-  display: inline-block;
-  content: "\f004";
-}
-
-.flex-pauseplay a:hover {
-  opacity: 1;
-}
-
-.flex-pauseplay a.flex-play:before {
-  content: "\f003";
-}
-
-.flex-control-nav {
-  width: 100%;
-  position: absolute;
-  bottom: -40px;
-  text-align: center;
-}
-
-.flex-control-nav li {
-  margin: 0 6px;
-  display: inline-block;
-  zoom: 1;
-  *display: inline;
-}
-
-.flex-control-paging li a {
-  width: 11px;
-  height: 11px;
-  display: block;
-  background: #666;
-  background: rgba(0, 0, 0, 0.5);
-  cursor: pointer;
-  text-indent: -9999px;
-  -o-box-shadow: inset 0 0 3px rgba(0, 0, 0, 0.3);
-  box-shadow: inset 0 0 3px rgba(0, 0, 0, 0.3);
-  border-radius: 20px;
-}
-
-.flex-control-paging li a:hover {
-  background: #333;
-  background: rgba(0, 0, 0, 0.7);
-}
-
-.flex-control-paging li a.flex-active {
-  background: #000;
-  background: rgba(0, 0, 0, 0.9);
-  cursor: default;
-}
-
-.flex-control-thumbs {
-  margin: 5px 0 0;
-  position: static;
-  overflow: hidden;
-}
-
-.flex-control-thumbs li {
-  width: 25%;
-  float: left;
-  margin: 0;
-}
-
-.flex-control-thumbs img {
-  width: 100%;
-  height: auto;
-  display: block;
-  opacity: 0.7;
-  cursor: pointer;
-  -moz-user-select: none;
-  transition: all 1s ease;
-}
-
-.flex-control-thumbs img:hover {
-  opacity: 1;
-}
-
-.flex-control-thumbs .flex-active {
-  opacity: 1;
-  cursor: default;
-}
-
-/* ====================================================================================================================
- * RESPONSIVE
- * ====================================================================================================================*/
-@media screen and (max-width: 860px) {
-  .flex-direction-nav .flex-prev {
-    opacity: 1;
-    left: 10px;
-  }
-  .flex-direction-nav .flex-next {
-    opacity: 1;
-    right: 10px;
-  }
-}
+1em = 16px
+*/
 /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
 /* Document
    ========================================================================== */
@@ -306,6 +23,7 @@ html[xmlns] .flexslider .slides {
  * 1. Correct the line height in all browsers.
  * 2. Prevent adjustments of font size after orientation changes in iOS.
  */
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Shrikhand&display=swap");
 html {
   line-height: 1.15; /* 1 */
   -webkit-text-size-adjust: 100%; /* 2 */
@@ -665,19 +383,49 @@ table {
 
 body, a {
   line-height: 1.7;
-  font-weight: 400;
-  font-family: "Roboto", serif, sans-serif;
   color: #000;
-  font-size: 1rem;
+  font-size: 0.8rem;
+  font-family: "Roboto", serif, sans-serif;
+  font-weight: 100;
 }
 
-h1,
-h2,
+.big-title {
+  font-weight: 900;
+  font-family: "Shrikhand", cursive, serif, sans-serif;
+}
+
+.big-title {
+  font-size: 3rem;
+}
+
+.section-title,
+.title {
+  font-size: 2.5rem;
+  margin-left: 2rem;
+  margin-top: 3rem;
+}
+
+.main__title {
+  font-weight: 700;
+  font-family: "Shrikhand", cursive, serif, sans-serif;
+  font-size: 2.7rem;
+  margin: 3rem 0 0 2rem;
+}
+
+h2 {
+  font-family: "Roboto", serif, sans-serif;
+  font-weight: 900;
+}
+
 h3,
 h4 {
+  font-family: "Roboto", serif, sans-serif;
+  font-weight: 700;
+}
+
+.footer__title {
   font-family: "Shrikhand", cursive, serif, sans-serif;
-  margin: inherit;
-  font-weight: bold;
+  font-weight: 400;
 }
 
 *,
@@ -691,22 +439,368 @@ h4 {
 html {
   font-size: 62.5%;
 }
+@media only screen and (max-width: 75em) {
+  html {
+    font-size: 50%;
+  }
+}
+@media only screen and (min-width: 112.5em) {
+  html {
+    font-size: 75%;
+  }
+}
 
 body {
   font-weight: 400;
   line-height: 1.7;
-  padding: 3rem;
   box-sizing: border-box;
+  margin: 0 auto;
 }
 
 a {
-  text-decoration: none;
-  color: #000;
   cursor: pointer;
+  color: #000;
+  text-decoration: none;
 }
 
 img {
   max-width: 100%;
   width: auto;
   height: auto;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.bgcolor {
+  background-color: rgb(245, 243, 243);
+}
+
+.category {
+  margin: 3rem auto 5rem auto;
+}
+.category__title {
+  text-transform: uppercase;
+  margin-left: 2rem;
+  font-size: 1.6rem;
+  font-weight: 300;
+  line-height: 1.9rem;
+}
+
+.header {
+  text-align: center;
+  padding-bottom: 7rem;
+}
+.header__title {
+  font-size: 2.5rem;
+  line-height: 1.2;
+  margin: 5rem auto 1rem auto;
+}
+.header__title-span {
+  display: block;
+}
+.header__para {
+  font-size: 1.8rem;
+  margin-bottom: 4rem;
+  line-height: 1.2;
+}
+.header__para-span {
+  display: block;
+}
+
+.autre .header {
+  height: 40vh;
+}
+
+.un {
+  background-image: url("/Assets/img/restaurants/jay-wennington-N_Y88TWmGwA-unsplash.jpg");
+}
+
+.deux {
+  background-image: url("/Assets/img/restaurants/louis-hansel-shotsoflouis-qNBGVyOCY8Q-unsplash.jpg");
+}
+
+.trois {
+  background-image: url("/Assets/img/restaurants/stil-u2Lp8tXIcjw-unsplash.jpg");
+}
+
+.quatre {
+  background-image: url("/Assets/img/restaurants/toa-heftiba-DQKerTsQwi0-unsplash.jpg");
+}
+
+.main {
+  padding-top: 1rem;
+}
+
+.autre .main {
+  width: 100%;
+  border-radius: 2rem 2rem 0 0;
+}
+
+.footer {
+  background-color: #353535;
+  color: white;
+  padding: 2rem;
+}
+.footer__title {
+  color: white;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+.footer__para-icon, .footer__para-link {
+  color: white;
+  font-size: 1.5rem;
+}
+.footer__para-icon {
+  margin-right: 1rem;
+}
+
+.top {
+  display: block;
+}
+
+.brand {
+  border-bottom: 1px solid #EAEAEA;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.15);
+  padding: 1rem 0;
+  text-align: center;
+  background-color: white;
+}
+
+.local {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem 0 1rem 0;
+  border: 1px solid rgb(243, 242, 242);
+  background-color: #EAEAEA;
+}
+.local__icon {
+  margin-right: 2rem;
+  font-size: 1.6rem;
+}
+.local__title {
+  margin-right: 0.3rem;
+  font-size: 1.6rem;
+}
+
+.article {
+  text-align: center;
+  font-size: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 4rem 0 8rem 0;
+}
+.article__numb {
+  margin-right: 35rem;
+  color: white;
+  padding: 0.8rem 1.2rem;
+  position: relative;
+  border-radius: 50%;
+  border: 1px solid rgb(243, 242, 242);
+  background-color: #9356DC;
+  z-index: 1;
+}
+.article__div {
+  padding: 2.5rem 4rem;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  position: absolute;
+  margin: 5rem 0;
+  border: 1px solid rgb(243, 242, 242);
+  border-radius: 3rem;
+  background-color: rgb(243, 242, 242);
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.15);
+}
+.article__div-para {
+  font-weight: bold;
+}
+.article__div-icon {
+  margin-right: 4rem;
+}
+
+.active .article__div {
+  background-color: #F7F7F7;
+}
+.active .article__div-icon {
+  color: #9356DC;
+}
+
+.resto .title {
+  margin-top: 5rem;
+}
+
+.card {
+  position: relative;
+  height: 29rem;
+  width: 36rem;
+  box-shadow: 0 3rem 3rem rgba(0, 0, 0, 0.5);
+  margin: 5rem auto;
+  border-radius: 2rem;
+}
+.card__picture {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 70%;
+}
+.card__picture-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  border-radius: 2rem 2rem 0 0;
+}
+.card__picture-new {
+  position: absolute;
+  top: 1.5rem;
+  border-radius: 0.5rem;
+  right: 1rem;
+  padding: 0.5rem 2rem;
+  z-index: 1000;
+  background-color: #99E2D0;
+  color: #008766;
+  font-weight: 700;
+  font-size: 1.5rem;
+}
+.card__info {
+  position: absolute;
+  bottom: 3.5rem;
+  left: 1.5rem;
+  width: 90%;
+}
+.card__info-title {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  font-size: 2rem;
+}
+.card__info-title .hackcheck {
+  display: block;
+}
+.card__info input[type=checkbox] {
+  display: none;
+}
+.card__info input[type=checkbox]:checked + .hackcheck-icon {
+  color: black;
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+  background: linear-gradient(193.33deg, #9356DC -11.44%, #FF79DA 123.93%);
+}
+
+.cardi {
+  position: relative;
+  height: 9rem;
+  width: 36rem;
+  box-shadow: 0px 4.01149px 15.0431px rgba(0, 0, 0, 0.1);
+  margin: 1rem auto;
+  border-radius: 2rem;
+}
+.cardi__info {
+  position: absolute;
+  top: 2rem;
+  left: 1rem;
+  width: 90%;
+}
+.cardi__info-title {
+  font-size: 1.8rem;
+}
+.cardi__info--para {
+  display: flex;
+  align-items: flex-end;
+  text-align: center;
+  justify-content: space-between;
+}
+.cardi__info--para-ingre {
+  font-size: 1.5rem;
+}
+.cardi__info--para-price {
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.btn {
+  color: white;
+  font-weight: 400;
+  font-size: 1.5rem;
+  margin: 1.5rem auto;
+  text-align: center;
+  padding: 2rem 3rem;
+  border-radius: 3rem;
+  background-image: linear-gradient(to right bottom, #FF79DA, #9356DC);
+  background-color: #FF79DA;
+  border: 1px solid;
+}
+
+.btn:hover {
+  background-image: linear-gradient(to right, #9356DC -5.2%, #FF79DA 110.74%);
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.35);
+  border-radius: 25px;
+}
+
+.autre .btn1 {
+  width: 60%;
+  margin: 0 0 3rem 8rem;
+  border-radius: 3rem;
+  text-align: center;
+}
+
+.autre {
+  display: flex;
+  flex-direction: column;
+}
+.autre .brand {
+  display: flex;
+  align-items: center;
+}
+.autre .brand__icon {
+  font-size: 2rem;
+  color: #000;
+  margin: 2rem -2rem 2rem 2rem;
+}
+.autre .brand__title {
+  margin: 0 auto;
+}
+.autre .brand .header {
+  height: 90vh;
+  padding: 10rem;
+}
+.autre .brand .header .header__title {
+  margin: 0;
+}
+.autre .main .main__title {
+  display: flex;
+  justify-content: flex-start;
+}
+.autre .main .main__title .hackcheck-icon {
+  margin-left: 5rem;
+}
+.autre .main .main__title .hackcheck input[type=checkbox] {
+  display: none;
+}
+.autre .main .main__title .hackcheck input[type=checkbox]:checked + .hackcheck-icon {
+  color: black;
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+  background: linear-gradient(193.33deg, #9356DC -11.44%, #FF79DA 123.93%);
+}
+.autre .un {
+  background-image: url("/Assets/img/restaurants/jay-wennington-N_Y88TWmGwA-unsplash.jpg");
+  background-size: cover;
+}
+.autre .deux {
+  background-image: url("/Assets/img/restaurants/louis-hansel-shotsoflouis-qNBGVyOCY8Q-unsplash.jpg");
+  background-size: cover;
+}
+.autre .trois {
+  background-image: url("/Assets/img/restaurants/stil-u2Lp8tXIcjw-unsplash.jpg");
+  background-size: cover;
+}
+.autre .quatre {
+  background-image: url("/Assets/img/restaurants/toa-heftiba-DQKerTsQwi0-unsplash.jpg");
+  background-size: cover;
 }/*# sourceMappingURL=style.css.map */

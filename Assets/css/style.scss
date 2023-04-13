@@ -7,7 +7,7 @@
     './scss/abstracts/mixins',
     './scss/abstracts/variables';
 @import 
-    './scss/vendors/flexslider',
+    
     './scss/vendors/normalize';
 @import 
     './scss/base/reset',
@@ -19,15 +19,17 @@
     './scss/layout/main',
     './scss/layout/pagination',
     './scss/layout/footer';
-    // './scss/layout/navbar';
 @import 
-    './scss/components/buttons',
-    './scss/components/buttons',
+    './scss/components/top',
+    './scss/components/brand',
+    './scss/components/local',
+    './scss/components/article',
+    './scss/components/card',
     './scss/components/buttons';
 @import 
     // './scss/pages/home',
-    // './scss/pages/home',
-    './scss/pages/home';
+    './scss/pages/home',
+    './scss/pages/autre';
 @import 
     // './scss/Themes/darktheme',
     // './scss/Themes/darktheme',

@@ -1,0 +1,52 @@
+.article {
+    text-align: center;
+    font-size: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 4rem 0 8rem 0;
+    
+    &__numb {
+       margin-right:35rem;
+        color: white;
+        padding: 0.8rem 1.2rem;
+        position: relative;
+        border-radius: 50%;
+        border: 1px solid $bg-first;
+        background-color: $color-tertiaire;
+        z-index: 1;
+    }
+    
+    &__div {
+        padding: 2.5rem 4rem;
+        display: flex;
+        justify-content:flex-start;
+        align-items: center;
+        position: absolute;
+        margin: 5rem 0;
+        border: 1px solid $bg-first;
+        border-radius: 3rem;
+        background-color: $bg-first;
+        box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.15);
+
+        &-para {
+            font-weight: bold;
+        }
+
+        &-icon {
+            margin-right: 4rem;
+        }
+    }
+}
+
+ .active  {
+    .article__div {
+
+        background-color: $bg-icon;
+
+        &-icon {
+            color: $color-tertiaire;
+        }
+    }
+
+}

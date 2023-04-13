@@ -8,23 +8,36 @@
     <link rel="stylesheet" href="./Assets/css/style.css">
     <title> OhMYFood | </title>
 </head>
-<body>
-    <header class="header">
-        
+<body class="home">
+
+    <header class="header bgcolor">
+
         <div class="top">
             <div class="brand">
-                <h1 class="brand__title"> ohmyfood</h1>
+                <h1 class="brand__title big-title"> ohmyfood</h1>
                 
             </div>
             <div class="local">
-                <div class="local__icon"></div>
-                <div class="local__city">Paris</div>
-                <div class="local__quater">Belleville</div>
+                
+                <i class="fa-sharp fa-solid fa-location-dot local__icon"></i>
+                <div class="local__city local__title">Paris,</div>
+                <div class="local__quarter local__title">Belleville</div>
             </div>
         </div>
-        <h2 class="header__title">Réservez le menu qui vous convient</h2>
-        <p class="header__para">Découvrez des restaurants d'exception, selectionnés par nos soins.</p>
-        <button class="btn">Explorer nos restaurants</button>
+        
+        <h2 class="header__title">
+            <span class="header__title-span">Réservez le menu qui</span>
+            <span class="header__title-span">vous convient</span> 
+        </h2>
+        <p class="header__para">
+            <span class="header__para-span">Découvrez des restaurants d'exception,
+
+            </span>
+            <span class="header__para-span">
+                selectionnés par nos soins.
+            </span>
+        </p>
+        <a href="resto" class="btn">Explorer nos restaurants</a>
     </header>
 
     <main class="main">
@@ -48,7 +61,7 @@
                 </div>
             </article>
             
-            <article class="article">
+            <article class="article active">
                 <div class="article__numb">3</div>
                 <div class="article__div">
                     <i class="fa-sharp fa-solid fa-store article__div-icon"></i>
@@ -57,78 +70,97 @@
             </article>
         </section>
 
-        <section class="section">
+        <section class="section bgcolor resto" id="#resto">
             <h2 class="section-title title">Restaurants</h2>
             <article class="card">
                 <a href="./laPalette.html">
-
                     <div class="card__picture">
+                        <img src="./Assets/img/restaurants/jay-wennington-N_Y88TWmGwA-unsplash.jpg" class="card__picture-img" alt="">
                         <div class="card__picture-new">Nouveau</div>
                     </div>
-                    <div class="card__info">
-                        <h3 class="card__info-title">
-                            <span  class="span-title">La palette du goût</span>
-                        </a>
-                        <i class="fa-solid fa-heart span-icon"></i>
+                </a>
+                <div class="card__info">
+                    <h3 class="card__info-title">
+                        <span  class="span-title">La palette du goût</span>
+                        <div class="hackcheck">
+
+                            <input type="checkbox" name="heart" id="check-click1">
+                            <label class="fa-regular fa-heart hackcheck-icon" for="check-click1"></label>
+                        </div>
                     </h3>
                     <p class="card__info-para">Ménilmontant</p>
                 </div>
             </article>
+            
             <article class="card">
                 <a href="./laNote.html">
-
                     <div class="card__picture">
+                        <img src="./Assets/img/restaurants/stil-u2Lp8tXIcjw-unsplash.jpg" class="card__picture-img" alt="">
                         <div class="card__picture-new">Nouveau</div>
                     </div>
-                    <div class="card__info">
-                        <h3 class="card__info-title">
-                            <span class="span-title">La note enchantée</span>
-                        </a>
-                        <i class="fa-solid fa-heart span-icon"></i>
+                </a>
+                <div class="card__info">
+                    <h3 class="card__info-title">
+                        <span  class="span-title">La note enchantée</span>
+                        <div class="hackcheck">
+
+                            <input type="checkbox" name="heart" id="check-click2">
+                            <label class="fa-regular fa-heart hackcheck-icon" for="check-click2"></label>
+                        </div>
                     </h3>
                     <p class="card__info-para">Charonne</p>
                 </div>
             </article>
+
             <article class="card">
                 <a href="./aLaFrancaise.html">
-
                     <div class="card__picture">
-                        <div class="card__picture-new"></div>
+                        <img src="./Assets/img/restaurants/toa-heftiba-DQKerTsQwi0-unsplash.jpg" class="card__picture-img" alt="">
+                        <!-- <div class="card__picture-new">Nouveau</div> -->
                     </div>
-                    <div class="card__info">
-                        <h3 class="card__info-title">
-                            <span class="span-title">A la française</span>
-                        </a>
-                        <i class="fa-solid fa-heart span-icon"></i>
+                </a>
+                <div class="card__info">
+                    <h3 class="card__info-title">
+                        <span  class="span-title">A la française</span>
+                        <div class="hackcheck">
+
+                            <input type="checkbox" name="heart" id="check-click3">
+                            <label class="fa-regular fa-heart hackcheck-icon" for="check-click3"></label>
+                        </div>
                     </h3>
                     <p class="card__info-para">Cité Rouge</p>
                 </div>
             </article>
+
             <article class="card">
                 <a href="./leDessert.html">
-
                     <div class="card__picture">
-                        <div class="card__picture-new"></div>
+                        <img src="./Assets/img/restaurants/louis-hansel-shotsoflouis-qNBGVyOCY8Q-unsplash.jpg" class="card__picture-img" alt="">
+                        <!-- <div class="card__picture-new">Nouveau</div> -->
                     </div>
-                    <div class="card__info">
-                        <h3 class="card__info-title">
-                            <span class="span-title">Le délice des sens</span>
-                        </a>
-                        <i class="fa-solid fa-heart span-icon"></i>
+                </a>
+                <div class="card__info">
+                    <h3 class="card__info-title">
+                        <span  class="span-title">Le délice des sens</span>
+                        <div class="hackcheck">
+
+                            <input type="checkbox" name="heart" id="check-click4">
+                            <label class="fa-regular fa-heart hackcheck-icon" for="check-click4"></label>
+                        </div>
                     </h3>
                     <p class="card__info-para">Folie-Méricourt</p>
                 </div>
             </article>
         </section>
     </main>
-    <footer class="footer">
-        <h4 class="footer-title">ohmyfood</h4>
+    <footer class="footer ">
+        <h4 class="footer__title title2">ohmyfood</h4>
         <p href="#" class="footer__para">
-            <i class="fa-solid fa-utensils footer__link-icon"></i>
+            <i class="fa-solid fa-utensils footer__para-icon"></i>
             <a class="footer__para-link">Proposer un restaurant</a>
         </p>
         <p href="#" class="footer__para">
-            <i class="fa-solid fa-handshake-angle footer__link-icon"></i>
+            <i class="fa-solid fa-handshake-angle footer__para-icon"></i>
             <a class="footer__para-link">Devenir partenaire</a>
         </p>
         <p href="#" class="footer__para">

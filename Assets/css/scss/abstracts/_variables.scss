@@ -2,9 +2,21 @@
 $color-text: #000;
 $color-first: #FF79DA;
 $color-second: #99E2D0;
+$color-quatre:  #008766;
 $color-tertiaire: #9356DC;
-// $color-button: #;
-// $color-bg-first: #;
+$blue: #89C8FA;
+$gris:#EAEAEA;
+$gris2: #F7F7F7;
+$bleuFoncer: #003A68;
+$white: #F3F3F3;
+$shadow: 0px 2px 4px rgba(0, 0, 0, 0.15);
+$bg-icon: #F7F7F7;
+$bg-first: rgb(243, 242, 242);
+$bg-color: #353535;
+$bg-first2: #EAEAEA;
+$bg-first3: rgb(245, 243, 243);
+$gradient: linear-gradient(to right bottom, #FF79DA,#9356DC);
+$gradientHover: linear-gradient(to right, #9356DC -5.2%, #FF79DA 110.74%);
 
 // Font family
 $ff-title: 'Shrikhand', cursive, serif, sans-serif;
@@ -17,16 +29,19 @@ $fw-bold: 700;
 $fw-bolder: 900;
 
 // Font size
-$fs-small: 1rem;
-$fs-default: 1.6rem;
-$fs-medium: 1.4rem;
+$fs-small: .8rem;
+$fs-default: 1rem;
+$fs-medium: 1.2rem;
 $fs-large: 1.6rem;
+$fs-xlarge: 2rem;
+$fs-title: 2.7rem;
+$fs-brand: 3rem;
 
 // Breakpoints for responsive
-$breakpoint-small: 600px;
-$breakpoint-medium: 900px;
-$breakpoint-large: 1200px;
-$breakpoint-large: 1400px;
+// $breakpoint-small: 600px;
+// $breakpoint-medium: 900px;
+// $breakpoint-large: 1200px;
+// $breakpoint-large: 1400px;
 
 
 

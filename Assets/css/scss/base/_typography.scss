@@ -7,19 +7,52 @@
 body, a {
 
     line-height: 1.7;
-    font-weight: 400;
-    font-family: $ff-text;
     color: $color-text;
     font-size: $fs-small;
-
+    font-family: $ff-text;
+    font-weight: $fw-small;
 }
 
 // Titles
-h1,
-h2,
+.big-title {
+    font-weight: $fw-bolder;
+    font-family: $ff-title;
+}
+
+.big-title {
+    
+    font-size: $fs-brand;
+}
+
+.section-title,
+.title {
+    font-size: 2.5rem;
+    margin-left: 2rem;
+    margin-top: 3rem;
+}
+
+.main__title {
+    font-weight: $fw-bold;
+    font-family: $ff-title; 
+    font-size: $fs-title;
+    margin: 3rem 0 0 2rem;
+}
+
+h2 {
+    font-family: $ff-text;
+    font-weight: $fw-bolder;
+}
+
 h3,
 h4 {
-    font-family: $ff-title;
-    margin: inherit;
-    font-weight: bold;
+    font-family: $ff-text;
+    font-weight: $fw-bold;
 }
+
+.footer__title {
+    
+    font-family: $ff-title;
+    font-weight: 400;
+}
+
+

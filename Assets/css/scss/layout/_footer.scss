@@ -1,1 +1,31 @@
-//This file is for create your style with relation on space of footer
+.footer {
+
+    background-color: $bg-color;
+    color: white;
+    padding: 2rem;
+
+    &__title {
+        color: white;
+        font-size: 2rem;
+        margin-bottom: 1rem;
+    }
+    
+    &__para {
+        &-icon,
+        &-link {
+            color: white;
+            font-size: 1.5rem;
+        }
+
+        &-icon {
+            margin-right: 1rem;
+        }
+    }
+
+}
+
+// .autre .footer {
+//     width: 100%;
+//     position: absolute;
+//     bottom: 0;
+// }
